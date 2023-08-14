@@ -1,0 +1,94 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 16px;
+    margin-left: 16px;
+
+    &__logo{
+        width: 47px;
+        height: 30px;
+    }
+
+    &__hamburger-open{
+        display: block;
+        z-index: 3;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .open{
+        width: 30px;
+        height: 30px;
+    }
+
+    &__tabs{
+        display: none;
+
+        .tab{
+            text-decoration: none;
+            color: v.$darkGrayishBlue;
+            padding-right: 40px;
+
+            &:hover{
+                color: v.$softRed;
+            }
+        }
+    }
+
+    &__menu{
+        display: none;
+        width: 257px;
+        height: 100%;
+        background-color: v.$offWhite;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: start;
+        right: 0;
+        z-index: 2;
+
+        &__tabs{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin-top: 150px;
+            margin-left: 27px;
+
+            &__tab{
+                text-decoration: none;
+                color: v.$darkGrayishBlue;
+                padding-top: 30px;
+            }
+        }   
+    }
+}
+
+@include mix.breakpoint(large){
+    .header{
+        margin-top: 90px;
+        margin-bottom: 90px;
+        margin-left: 165px;
+        margin-right: 165px;
+
+        &__logo{
+            width: 65px;
+            height: 40px;
+        }
+        
+        &__hamburger-open{
+            display: none;
+        }
+
+        &__tabs{
+            display: block;
+        }
+    }
+}

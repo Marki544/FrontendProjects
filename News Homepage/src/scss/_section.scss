@@ -1,0 +1,90 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.section{
+    display: flex;
+    justify-content: center;
+    height: 470px;
+
+    &__grid{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 100px 220px;
+        grid-template-rows: repeat(3, 130px);
+        column-gap: 23px;
+        row-gap: 35px;
+
+        .image{
+            width: 100%;
+        }
+
+        .retro-pcs{
+            grid-row: 1;
+        }
+
+        .top-laptops{
+            grid-row: 2;
+        }
+
+        .gaming-growth{
+            grid-row: 3;
+        }
+        
+        &__container{
+            .num{
+                font-size: 25px;
+                color: v.$grayishBlue;
+                margin-bottom: 18px;
+            }
+
+            .h{
+                margin-bottom: 11px;
+                color: v.$veryDarkBlue;
+                font-size: 15px;
+                font-weight: v.$fontWeightL;
+
+                &:hover{
+                    cursor: pointer;
+                    color: v.$softRed;
+                }
+            }
+
+            .text{
+                font-size: 13px;
+                color: v.$darkGrayishBlue;
+                line-height: 25px;
+            }
+        }
+    }
+
+    @include mix.breakpoint(large){
+        &__grid{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 100px 220px 100px 220px 100px 220px;
+            grid-template-rows: auto;
+            column-gap: 23px;
+
+            .retro-pcs{
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            .top-laptops{
+                grid-row: 1;
+                grid-column: 3;
+            }
+    
+            .gaming-growth{
+                grid-row: 1;
+                grid-column: 5;
+            }
+        }
+    }
+}
+
+@include mix.breakpoint(large){
+    .section{
+        height: 127px;
+    }
+}
