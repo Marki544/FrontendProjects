@@ -1,0 +1,22 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: v.$violet;
+    background-image: url("../images/bg-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100px;
+}
+
+@include mix.breakpoint(large){
+    body{
+        background-image: url("../images/bg-desktop.svg");
+        height: 100vh;
+    }
+}

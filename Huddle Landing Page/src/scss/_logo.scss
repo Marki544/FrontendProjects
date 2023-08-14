@@ -1,0 +1,20 @@
+@use "mixins" as mix;
+
+.header{
+
+    &__logo{
+        width: 130px;
+        height: 25px;
+        margin-top: 36px;
+        margin-left: 35px;
+    }
+
+    @include mix.breakpoint(large){
+        &__logo{
+            width: 210px;
+            height: 45px;
+            margin-top: 55px;
+            margin-left: 75px;
+        }
+    }
+}
