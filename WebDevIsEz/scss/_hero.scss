@@ -1,0 +1,28 @@
+@use "mixins" as m;
+
+.section{
+    display: flex;
+    justify-content: flex-end;
+
+    &__hero_image{
+        display: block;
+        width: 100%;
+    }
+
+    &__hero_image_desktop{
+        display: none;
+        position: absolute;
+        top: 0px;
+        height: 100%;
+    }
+
+    @include m.breakpoint(large){
+        &__hero_image{
+            display: none;
+        }
+
+        &__hero_image_desktop{
+            display: block;
+        }
+    }
+}

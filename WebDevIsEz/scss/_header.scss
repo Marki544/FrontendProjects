@@ -1,0 +1,23 @@
+@use "mixins" as m;
+
+.header{
+    padding: 32px;
+    width: 24%;
+
+    &__logo{
+        width: 100px;
+        height: 20px;
+    }
+    
+}
+
+@include m.breakpoint(large){
+    .header{
+        padding: 65px 165px 0px;
+
+        &__logo{
+            width: 158px;
+            height: 33px;
+        }
+    }
+}

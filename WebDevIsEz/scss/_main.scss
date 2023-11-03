@@ -1,0 +1,145 @@
+@use "variables" as var;
+@use "mixins" as m;
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 33px;
+    margin-top: 68px;
+
+    &__first{
+        font-size: 30px;
+        font-weight: 200;
+        color: var.$desauratedRed;
+        letter-spacing: 10px;
+    }
+
+    &__second{
+        font-size: 30px;
+        font-weight: 600;
+        color: var.$darkGrayishRed;
+        letter-spacing: 10px;
+        text-align: center;
+    }
+
+    &__text{
+        font-size: 12px;
+        font-weight: 600;
+        color: var.$desauratedRed;
+        line-height: 27px;
+        margin-top: 30px;
+        text-align: center;
+        width: 277px;
+    }
+
+    &__input{
+        margin-top: 40px;
+        position: relative;
+
+        .input-field{
+            height: 47px;
+            width: 310px;
+            border-radius: 100px;
+            border: 1px solid var.$desauratedRed;
+            background-color: transparent;
+            padding-left: 25px;
+            opacity: 0.5;
+
+            &::placeholder{
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 12px;
+                color: var.$desauratedRed;
+            }
+        }
+
+        .button{
+            position: absolute;
+            right: 0px;
+            bottom: 1px;
+            height: 48px;
+            width: 65px;
+            border-radius: 100px;
+            float: right;
+            border: none;
+            background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        
+            &:hover{
+                cursor: pointer;
+                opacity: 0.7;
+                box-shadow: 0px 10px 10px 0px var.$desauratedRed;
+            }
+
+            &:active{
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+
+        .error-sign{
+            display: none;
+            position: absolute;
+            bottom: 50%;
+            right: 70px;
+            transform: translateY(50%);
+        }
+
+        .error-text{
+            display: none;
+            position: absolute;
+            left: 33px;
+            font-size: 12px;
+            color: var.$softRed;
+        }
+    }
+}
+
+@include m.breakpoint(large){
+    .main{
+        display: flex;
+        align-items: flex-start;
+        line-height: 60px;
+        margin-left: 165px;
+        margin-top: 140px;
+        
+        &__first{
+            font-size: 50px;
+            letter-spacing: 20px;
+        }
+
+        &__second{
+            font-size: 50px;
+            letter-spacing: 20px;
+        }
+
+        &__text{
+            font-size: 15px;
+            margin-top: 43px;
+            text-align: start;
+            width: 385px;
+        }
+
+        &__input{
+            margin-top: 50px;
+
+            .input-field{
+                width: 445px;
+                height: 55px;
+            }
+
+            .button{
+                width: 100px;
+                height: 56px;
+                bottom: 3px;
+            }
+
+            .error-sign{
+                right: 120px;
+            }
+
+            .error-text{
+                top: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use "mixins" as m;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+@include m.breakpoint(large){
+    body{
+        background: url("../assets/images/bg-pattern-desktop.svg");
+        background-size: cover;       
+    }
+}
