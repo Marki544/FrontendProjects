@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);   
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-template{
+    display: none;
+    width: 928px;
+    height: 641px;
+    background-color: var(--white);
+    border-radius: 25px;
+}
+
+.hero-image-mobile{
+    display: block;
+    width: 375px;
+    margin-bottom: 45px;
+}
+
+.container h1{
+    color: var(--dark-slate-grey);
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.container p{
+    color: var(--charcoal-grey);
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+}
+
+.feature{
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+    margin-top: 17px;
+}
+
+.feature img{
+    width: 21px;
+    margin-right: 17px;
+}
+
+.feature p{
+    margin: 0px;
+    width: 250px;
+}
+
+.user-input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.user-input .input-placeholder{
+    margin-left: 0px;
+    color: var(--dark-slate-grey);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.user-input .placeholders{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-input .error{
+    color: var(--tomato);
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 147px;
+    margin-right: 0px;
+}
+
+.user-input .active{
+    display: block;
+}
+
+.user-input .inactive{
+    display: none;
+}
+
+.user-input input{
+    height: 55px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    margin-top: 13px;
+    padding-left: 25px;
+}
+
+.user-input button{
+    height: 55px;
+    border-radius: 10px;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-input button:hover{
+    background-color: var(--tomato);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.hero-image-desktop{
+    display: none;
+}
+
+@media screen and (min-width: 800px){
+    body{
+        background-color: var(--charcoal-grey);
+    }
+    
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container-template{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+    }
+ 
+    .hero-image-mobile{
+        display: none;
+    }
+
+    .hero-image-desktop{
+        display: block;
+        justify-self: center;
+        align-self: center;
+        margin-right: -20px;
+    }
+
+    .container h1{
+        display: none;
+        margin: 0px;
+    }
+
+    .container p{
+        display: none;
+        margin: 0px;
+    }
+
+    .features{
+        display: none;
+    }
+
+    .user-input{
+        display: none;
+    }
+
+    .text{
+        margin-left: 65px;
+    }
+
+    .container-template h1{
+        display: block;
+        margin-top: 105px;
+        margin-bottom: 15px;
+        font-size: 60px;
+        font-weight: 700;
+    }
+
+    .container-template p{
+        display: block;
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .container-template .features{
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 45px;
+    }
+
+    .container-template .features .feature{
+        margin-left: 0px;
+        margin-top: 14px;
+    }
+
+    .container-template .features .feature p{
+        width: 400px;
+    }
+
+    .container-template .features .feature img{
+        margin-right: 17px;
+    }
+
+    .container-template .user-input{
+        display: flex;
+        margin-left: 0px;
+    }
+
+    .container-template .user-input input{
+        width: 375px;
+        margin-top: 10px;
+    }
+
+    .container-template .user-input button{
+        width: 375px;
+    }
+
+    .container-template .user-input .placeholders{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container-template .user-input .placeholders .error{
+        color: var(--tomato);
+        margin-left: 220px;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .container-template .user-input .placeholders .active{
+        display: none;
+    }
+}
